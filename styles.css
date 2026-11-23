@@ -164,3 +164,9 @@ body.lead-open{overflow:hidden}
 @media(max-width:760px){.lead{padding:12px;align-items:end}.lead__panel{grid-template-columns:1fr;max-height:calc(100svh - 24px);overflow:auto}.lead__main{position:static;max-height:none;overflow:visible}.lead__aside{flex-direction:row;align-items:center;gap:16px;min-height:64px;padding:14px 64px 14px 20px}.lead__lockup{width:84px}.lead__offer,.lead__direct{display:none}.lead__mark{left:auto;width:132px;right:-36px;bottom:-46px;transform:none;opacity:.16}.lead__close{color:#fff;top:10px;right:8px}.lead__close:hover{background:rgba(255,255,255,.12);color:#fff}.lead__form,.lead__done{padding:26px 20px 22px}.lead__form h2,.lead__done h2{font-size:24px;margin-right:0}.lead__fields{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.lead__scrim,.lead__panel,.lead.is-closing .lead__scrim,.lead.is-closing .lead__panel{transition:none}.lead__panel{transform:none}}
 
+/* ---------- 备案信息页脚（ICP 合规，2026-11 新增） ---------- */
+.site-footer{background:#5D2487;color:rgba(255,255,255,.72);border-top:1px solid rgba(255,255,255,.18);padding:20px 4.2% 24px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:11px;letter-spacing:.4px;line-height:1.7}
+.site-footer p{margin:0}
+.site-footer a{color:rgba(255,255,255,.82);border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:1px;transition:color .18s,border-color .18s}
+.site-footer a:hover{color:#fff;border-bottom-color:#fff}
+@media (max-width:720px){.site-footer{justify-content:center;text-align:center;padding:18px 6% 22px}}
