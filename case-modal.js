@@ -4,7 +4,7 @@
   const dialog = document.createElement('dialog');
   dialog.className = 'case-dialog';
   dialog.setAttribute('aria-labelledby', 'case-dialog-title');
-  dialog.innerHTML = `<div class="case-dialog-header"><div><p class="case-dialog-eyebrow">Aurdeus · 客户案例</p><h2 id="case-dialog-title"></h2></div><button type="button" class="case-dialog-close" aria-label="关闭案例详情" autofocus>×</button></div><div class="case-dialog-content"></div><div class="case-dialog-footer"><span>AI 政企应用 / 行业解决方案</span></div>`;
+  dialog.innerHTML = `<div class="case-dialog-header"><div><p class="case-dialog-eyebrow">Aurdeus · 客户案例</p><div class="case-dialog-title-row"><h2 id="case-dialog-title"></h2><img class="case-dialog-logo" alt="" hidden></div></div><button type="button" class="case-dialog-close" aria-label="关闭案例详情" autofocus>×</button></div><div class="case-dialog-content"></div><div class="case-dialog-footer"><span>AI 政企应用 / 行业解决方案</span></div>`;
   document.body.append(dialog);
   const content = dialog.querySelector('.case-dialog-content');
   let opener, previousOverflow;
@@ -17,6 +17,11 @@
     opener = card.querySelector('.case-card-open');
     const title = card.querySelector('figcaption > span').textContent;
     dialog.querySelector('h2').textContent = title;
+    const logo = dialog.querySelector('.case-dialog-logo');
+    const marks = { '传统制造业': ['assets/clients/yili.png', '伊利'], '消费电子行业': ['assets/clients/lenovo.png', 'Lenovo'], '司法行业': ['assets/clients/kwm.png', '金杜律师事务所'], '政府机关': ['assets/clients/samr.png', '市场监督管理'] };
+    const mark = marks[title];
+    if (mark) { logo.src = mark[0]; logo.alt = mark[1]; logo.hidden = false; }
+    else { logo.hidden = true; logo.removeAttribute('src'); logo.alt = ''; }
     content.replaceChildren();
     if (title === '传统制造业') content.innerHTML = manufacturing;
     else if (title === '教育行业') content.innerHTML = education;
